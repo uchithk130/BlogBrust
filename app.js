@@ -9,7 +9,7 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
 const User = require('./models/User');
-const Blog = require('./models/Blog');
+const Blog = require('./models/blog');
 require('dotenv').config();
 
 const app = express();
