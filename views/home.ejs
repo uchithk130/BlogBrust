@@ -1,0 +1,127 @@
+<%- include("header", { user: user, userPosts: userPosts }) -%>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background: linear-gradient(180deg, #ecf0f1 0%, #fff 100%); /* Updated background color */
+    }
+
+    .welcome-section {
+        text-align: center;
+        padding: 100px 0;
+    }
+
+    .welcome-title {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        color: #333;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .welcome-message {
+        font-size: 1.5em;
+        opacity: 0.9;
+        color: #333;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .features-section {
+        background-color: #fff;
+        padding: 50px 0;
+    }
+
+    .feature {
+        width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #ecf0f1; /* Updated feature background color */
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .feature:hover {
+        transform: scale(1.05);
+    }
+
+    .feature .emoji {
+        font-size: 2em;
+        margin-bottom: 10px;
+        display: block;
+        color: #333;
+    }
+
+    .feature p {
+        color: #333;
+    }
+
+    .call-to-action {
+        font-size: 1.4em;
+        font-weight: bold;
+        margin-top: 30px;
+        color: #3498db;
+        
+    }
+    .hero-section {
+        text-align: center;
+        padding: 100px 0;
+        background-color: #95cef7;
+        color: #fff;
+    }
+
+    .hero-title {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-tagline {
+        font-size: 1.5em;
+        opacity: 0.9;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+</style>
+
+<section class="hero-section">
+    <div class="hero-container">
+        <h1 class="hero-title">Welcome, <%= user.name %>!</h1>
+        <p class="hero-tagline">Unleash Your Creativity and Inspire the World</p>
+    </div>
+</section>
+
+<section class="welcome-section">
+    <div class="welcome-container">
+        <h1 class="welcome-title">🌟 Welcome to BlogBurst - Where Ideas Come to Life! 🌟</h1>
+        <p class="welcome-message">Dear Creatives, Innovators, and Storytellers,<br>
+        Embark on a journey of self-expression, creativity, and inspiration at BlogBurst. We invite you to a world where your thoughts take center stage, your projects find a home, and your creativity knows no bounds.</p>
+    </div>
+</section>
+
+<section class="features-section">
+    <div class="feature">
+        <span class="emoji">✨</span>
+        <p><strong>Express Yourself:</strong> Pour your heart out through beautifully crafted blogs. Whether it's a personal reflection, a tech tutorial, or a poetic masterpiece, [Your Blog Platform] is your canvas.</p>
+    </div>
+
+    <div class="feature">
+        <span class="emoji">📸</span>
+        <p><strong>Visualize Your Ideas:</strong> A picture is worth a thousand words. Seamlessly upload images to enhance your blogs and let your creativity shine.</p>
+    </div>
+
+    <div class="feature">
+        <span class="emoji">🔗</span>
+        <p><strong>Share Your World:</strong> Share links to your favorite resources, projects, or anything that fuels your passion. Connect your audience to the vast universe of your thoughts and discoveries.</p>
+    </div>
+
+    <div class="feature">
+        <span class="emoji">🤝</span>
+        <p><strong>Connect and Collaborate:</strong> BlogBurst is not just a space for solo journeys. Collaborate with like-minded individuals, share ideas, and spark new conversations.</p>
+    </div>
+</section>
+
+<p class="call-to-action">Join Us on This Creative Odyssey! Sign up today and become part of a community that values every word, every image, and every link shared. At BlogBurst, we believe that creativity knows no boundaries, and your ideas have the power to inspire. Ready to embark on this creative odyssey? Join us at BlogBurst and let your imagination run wild!</p>
+
+<%- include("footer") -%>

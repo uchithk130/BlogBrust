@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>BlogBurst</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+<!-- Include Font Awesome CSS for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <link rel="stylesheet" href="/style.css">
+  
+</head>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light custom-nav-class">
+    <div class="container">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">
+            <% if (user) { %>
+                <img src="<%= user.profilePicture %>" alt="Profile Picture" class="mr-2" style="border-radius: 50%; height: 30px; width: 30px;">
+                <%= user.name %>
+            <% } else { %>
+                <button type="submit" name="button" class="btn btn-primary">Login</button>
+            <% } %>
+        </a>
+
+        <!-- Toggle button for mobile -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item  mr-2" id="home">
+                    <a class="nav-link" href="/" >Home</a>
+                </li>
+                <li class="nav-item mr-2" id="posts">
+                    <a class="nav-link" href="/posts">Posts</a>
+                </li>
+                <li class="nav-item mr-2" id="compose">
+                  <a class="nav-link" href="/compose">Compose</a>
+              </li>
+              <li class="nav-item mr-2" id="my-posts">
+                <a class="nav-link" href="/my-posts">My_posts</a>
+            </li>
+               
+                <li class="nav-item mr-2" id="contact">
+                    <a class="nav-link" href=" https://uchithk130.github.io/details/" target="_blank">Contact</a>
+                </li>
+                <li class="nav-item mr-2" id="logout">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
+
+  <body>
+    <div class="container" style="margin-bottom: 150px;">
+
+    

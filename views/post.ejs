@@ -1,0 +1,37 @@
+<%- include("header") -%>
+<style>
+     body {
+    
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background: linear-gradient(180deg, #ecf0f1 0%, #fff 100%); /* Updated background color */
+    }
+</style>
+<div class="container mt-5">
+    <h1 class="mb-4">All Blogs</h1>
+
+    <div class="row">
+        <% for (let item of allBlogs) { %>
+          <div class="col-12 col-md-12 col-lg-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                      <img src="<%= item.image %>" alt="Profile Picture" class="mr-2" style="border-radius: 50%; height: 30px; width: 30px;">
+                      <h5 class="card-title" style="display: inline;"><%= item.name %></h5>
+                      <div style="margin-top: 19px;">
+                        <h6 class="card-title" style="display: inline;">By : <%= item.By %></h6>
+                      </div>
+                      
+                        <div class="d-flex justify-content-between" style="margin: 20px 0 10px 10px;">
+                            <a href="/read/<%= item._id %>" class="btn btn-primary">Read</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<footer class="mt-5" style="text-align: center;"><b>@Uchithkumar</b></footer>
+
+<%- include("footer") -%>

@@ -1,0 +1,43 @@
+<%- include("header", { user: user, userPosts: userPost }) -%>
+
+<div>
+    <div class="container w-100 border bg-white mt-5 p-3 mx-auto">
+        <img src="<%= userPost.image %>" alt="Profile Picture" class="mr-2" style="border-radius: 50%; height: 40px; width: 40px; display: inline; margin-bottom: 20px;">
+        <h2 class="text-primary " style="display: inline; margin-bottom: 3px;"><%= userPost.name %></h2>
+        <h5 style="padding: 20px; padding-bottom: 0;"><div class="text-primary " style="display: inline;" >By : </div><%= userPost.By %></h5>
+        <h5 style="padding: 20px;"><div class="text-primary " style="display: inline;" >Contact : </div> <%= user.email %></h5>
+        <hr>
+        <h5 style="padding: 20px;">Description</h5>
+        <p style="padding: 0 0 0 20px;"><%= userPost.content %></p>
+    
+   
+
+    <!-- Display Images -->
+    <div class="container w-100 bg-white mt-3 p-3 d-flex">
+        <% userPost.images.forEach(function(image) { %>
+            <div class="card mx-2" style="width: 17rem; height: 15rem; background-image: url('data:image/png;base64,<%= image %>'); background-position: center; background-size: cover;">
+                <div class="card-body"></div>
+            </div>
+        <% }); %>
+    </div>
+    
+
+    <!-- Provide Download Links for PDFs -->
+    <div class="container w-100 bg-white mt-3 p-3 d-flex">
+        <% userPost.pdfs.forEach(function(pdf) { %>
+            <a href="data:application/pdf;base64,<%= pdf %>" download="<%= userPost.name %>.pdf">Download PDF</a>
+        <% }); %>
+    </div>
+    
+
+    <!-- Display Links -->
+    <div class="container w-100 bg-white mt-3 p-3 d-flex">
+        <% userPost.links.forEach(function(link) { %>
+            <h5 class="text-primary " style="display: inline;" >Link : &nbsp;&nbsp;</h5><a href="<%= link %>" target="_blank"><%= link %></a><br>
+        
+        <% }); %>
+    </div>
+</div>
+</div>
+
+<%- include("footer") -%>

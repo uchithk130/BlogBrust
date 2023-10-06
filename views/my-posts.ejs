@@ -1,0 +1,39 @@
+<%- include("header") -%>
+<style>
+     body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background: linear-gradient(180deg, #ecf0f1 0%, #fff 100%); /* Updated background color */
+    }
+</style>
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="mb-0">Your Blogs</h1>
+        <a href="/compose" class="btn btn-secondary ml-3">Add New Blog</a>
+    </div>
+
+    <div class="row">
+        <% for(let item of allBlogs){ %>
+            <div class="col-12 col-md-12 col-lg-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= item.name %></h5>
+                        <p class="card-text">By: <%= item.By %></p>
+                        <div class="d-flex justify-content-between">
+                            <form action="/delete/<%= item._id %>" method="post">
+                                <button type="submit" name="button" class="btn btn-danger">Delete</button>
+                            </form>
+                            <a href="/read/<%= item._id %>" class="btn btn-primary mb-2">Read</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+    <footer class="text-center mt-5"><b>@Uchithkumar</b></footer>
+</div>
+
+<%- include("footer") -%>
