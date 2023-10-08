@@ -121,7 +121,9 @@ app.get("/", ensureAuthenticated, async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-
+app.get("/t&p", function (req, res) {
+    res.render("t&p");
+});
 app.get("/read/:postId", ensureAuthenticated, async (req, res) => {
     try {
         const postId = req.params.postId;
