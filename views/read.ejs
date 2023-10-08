@@ -5,7 +5,7 @@
         <img src="<%= userPost.image %>" alt="Profile Picture" class="mr-2" style="border-radius: 50%; height: 40px; width: 40px; display: inline; margin-bottom: 20px;">
         <h2 class="text-primary " style="display: inline; margin-bottom: 3px;"><%= userPost.name %></h2>
         <h5 style="padding: 20px; padding-bottom: 0;"><div class="text-primary " style="display: inline;" >By : </div><%= userPost.By %></h5>
-        <h5 style="padding: 20px;"><div class="text-primary " style="display: inline;" >Contact : </div> <%= user.email %></h5>
+        <h5 style="padding: 20px;"><div class="text-primary " style="display: inline;" >Contact : </div> <%= userPost.author.email %></h5>
         <hr>
         <h5 style="padding: 20px;">Description</h5>
         <p style="padding: 0 0 0 20px;"><%= userPost.content %></p>
