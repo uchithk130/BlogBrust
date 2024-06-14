@@ -18,7 +18,13 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
+    console.log("Connected to MongoDB!");
+})
+.catch((error) => {
+    console.error("Failed to connect to MongoDB:", error);
+});
 const aboutstarttext = "This comprehensive outline covers a wide range of topics in full-stack web development, ensuring that you won't miss any critical aspect of the field. You can expand on each topic as needed in your book to provide readers with a thorough understanding of full-stack web development."
 const contactstarttext = "By the end of this chapter, you'll have a strong grasp of HTML5 basics, including markup, document structure, common elements, and attributes. With this knowledge, you'll be well-prepared to start creating web content using HTML5."
 
